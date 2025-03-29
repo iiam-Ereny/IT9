@@ -1,17 +1,19 @@
 @import url("https://fonts.googleapis.com/css?Poppins:400,500,600,700&display=swap");
 
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: "Poppins", sans-serif;
 }
 
-body{
-   min-height: 100vh;
-   background: #d2d2d2;
+body {
+    min-height: 100vh;
+    background: #d2d2d2;
+    display: flex;
 }
-.sidebar{
+
+.sidebar {
     position: fixed;
     top: 0;
     left: 0;
@@ -24,34 +26,34 @@ body{
     padding: 25px 20px;
     transition: all 0.5s ease;
 }
-.sidebar:hover{
+
+.sidebar:hover {
     width: 250px;
 }
 
 .sidebar-header {
     display: flex;
     align-items: center;
-
 }
 
 .sidebar-header img {
     width: 65px;
     border-radius: 50%;
-
 }
-.sidebar-header h2{
+
+.sidebar-header h2 {
     font-size: 1.25rem;
     font-weight: 600;
     color: #052645;
     margin-left: 20px;
 }
 
-.sidebar-links{
-   list-style: none;
-   margin-top: 20px;
-
+.sidebar-links {
+    list-style: none;
+    margin-top: 20px;
 }
-.sidebar-links li a{
+
+.sidebar-links li a {
     display: flex;
     align-items: center;
     gap: 0 20px;
@@ -61,8 +63,81 @@ body{
     white-space: nowrap;
     text-decoration: none;
 }
-.sidebar-links li a:hover{
+
+.sidebar-links li a:hover {
     background: #052645;
     color: #fff;
     border-radius: 5px;
+}
+
+.main-content {
+    margin-left: 85px;
+    padding: 20px;
+    width: calc(100% - 85px);
+    transition: margin-left 0.5s ease;
+}
+
+.sidebar:hover ~ .main-content {
+    margin-left: 250px;
+    width: calc(100% - 250px);
+}
+
+.dashboard-section {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+.dashboard-section table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.dashboard-section table, .dashboard-section th, .dashboard-section td {
+    border: 1px solid #ddd;
+}
+
+.dashboard-section th, .dashboard-section td {
+    padding: 10px;
+    text-align: left;
+}
+
+.dashboard-section th {
+    background-color: #f0f0f0;
+}
+
+.dashboard-section .actions button {
+    padding: 5px 10px;
+    margin-right: 5px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.dashboard-section .actions .add-stock {
+    background-color: #052645;
+    color: #fff;
+}
+
+.dashboard-section .actions .remove-stock {
+    background-color: #ff0000;
+    color: #fff;
+}
+
+.footer {
+    text-align: center;
+    padding: 10px;
+    background-color: #343030;
+    position: fixed;
+    bottom: 0;
+    width: calc(100% - 85px);
+    margin-left: 85px;
+    transition: margin-left 0.5s ease, width 0.5s ease;
+}
+
+.sidebar:hover ~ .footer {
+    margin-left: 250px;
+    width: calc(100% - 250px);
 }
